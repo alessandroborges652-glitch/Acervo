@@ -1,0 +1,78 @@
+site_name: Acervo
+site_description: Fichamentos de ciência do treinamento resistido — base para prescrição de treino com justificativa científica
+site_author: Acervo
+docs_dir: docs
+
+theme:
+  name: material
+  language: pt-BR
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  icon:
+    logo: material/bookshelf
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.sections
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+
+plugins:
+  - search:
+      lang: pt
+
+nav:
+  - Índice do acervo: index.md
+  - Fichamentos:
+      - fichamentos/index.md
+      - Modelo de fichamento: fichamentos/modelo.md
+  - Método de fichamento: metodo.md
+  - Referências recomendadas: referencias.md
+
+extra:
+  generator: false

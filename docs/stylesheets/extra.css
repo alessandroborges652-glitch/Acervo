@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Acervo — identidade visual
+   Paleta de fichário: papel, tinta, e três cores de carimbo de rastreabilidade.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+
+:root {
+  --acv-paper:        #EFF1EA;
+  --acv-paper-card:   #F7F8F3;
+  --acv-ink:          #16211C;
+  --acv-ink-soft:     #445048;
+  --acv-line:         #C7C2AE;
+  --acv-teal:         #1F5C52;
+  --acv-teal-soft:    #DDE8E4;
+  --acv-ochre:        #A87B2E;
+  --acv-ochre-soft:   #F0E4CC;
+  --acv-brick:        #8C3F2E;
+  --acv-brick-soft:   #F1DFD8;
+}
+
+/* ---- Tema claro ---- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--acv-teal);
+  --md-primary-fg-color--light: #2C7A6C;
+  --md-primary-fg-color--dark:  #14403A;
+  --md-accent-fg-color:         var(--acv-ochre);
+  --md-default-bg-color:        var(--acv-paper);
+  --md-default-fg-color:        var(--acv-ink);
+  --md-default-fg-color--light: var(--acv-ink-soft);
+  --md-typeset-a-color:         var(--acv-teal);
+}
+
+/* ---- Tema escuro ---- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:  #2C7A6C;
+  --md-accent-fg-color:   #D4A45A;
+  --md-default-bg-color:  #131A17;
+  --md-typeset-a-color:   #6FBFAE;
+}
+
+/* ---- Tipografia ---- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  line-height: 1.1;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid var(--acv-line);
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+}
+
+/* ---- Tabelas: densas e legíveis, é o formato do índice ---- */
+.md-typeset table:not([class]) {
+  font-size: 0.76rem;
+  border: 1px solid var(--acv-line);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--acv-teal-soft);
+  color: var(--acv-teal);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: #1C2E29;
+  color: #8FD4C4;
+}
+
+/* ==========================================================================
+   Carimbos de rastreabilidade
+   Uso no markdown:  [OBRA]{.obra}  ·  [COMENTÁRIO]{.comentario}  ·  [NÃO ENCONTRADO]{.nao-encontrado}
+   (requer a extensão attr_list, já ativada no mkdocs.yml)
+   ========================================================================== */
+
+.md-typeset .obra,
+.md-typeset .comentario,
+.md-typeset .nao-encontrado {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px dashed currentColor;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.md-typeset .obra {
+  color: var(--acv-teal);
+  background: var(--acv-teal-soft);
+}
+
+.md-typeset .comentario {
+  color: var(--acv-ochre);
+  background: var(--acv-ochre-soft);
+}
+
+.md-typeset .nao-encontrado {
+  color: var(--acv-brick);
+  background: var(--acv-brick-soft);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .obra {
+  color: #8FD4C4; background: #1C2E29;
+}
+[data-md-color-scheme="slate"] .md-typeset .comentario {
+  color: #E0BE7C; background: #33291A;
+}
+[data-md-color-scheme="slate"] .md-typeset .nao-encontrado {
+  color: #E0A08C; background: #33211C;
+}
+
+/* ==========================================================================
+   Status do mapa temático
+   Uso:  [lacuna]{.st-lacuna}  ·  [superficial]{.st-superficial}  ·  [profundo]{.st-profundo}
+   ========================================================================== */
+
+.md-typeset .st-lacuna,
+.md-typeset .st-superficial,
+.md-typeset .st-profundo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 9px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.md-typeset .st-lacuna      { color: var(--acv-brick); background: var(--acv-brick-soft); }
+.md-typeset .st-superficial { color: var(--acv-ochre); background: var(--acv-ochre-soft); }
+.md-typeset .st-profundo    { color: var(--acv-teal);  background: var(--acv-teal-soft); }
+
+/* ---- Cabeçalho de ficha (bloco de metadados no topo de cada fichamento) ---- */
+.md-typeset .ficha-meta {
+  background: var(--acv-paper-card);
+  border: 1px solid var(--acv-line);
+  border-left: 3px solid var(--acv-teal);
+  border-radius: 3px;
+  padding: 14px 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--acv-ink-soft);
+  margin-bottom: 1.6em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .ficha-meta {
+  background: #1A2320;
+  color: #A8B5AE;
+}
+
+.md-typeset .ficha-meta strong {
+  color: var(--acv-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.68rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .ficha-meta strong { color: #8FD4C4; }
+
+/* ---- Rodapé de conexões ---- */
+.md-typeset .conexoes {
+  border-top: 1px solid var(--acv-line);
+  padding-top: 1em;
+  font-size: 0.82rem;
+}
+
+/* ---- Detalhes de acabamento ---- */
+.md-typeset code {
+  background: var(--acv-teal-soft);
+  color: var(--acv-teal);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background: #1C2E29;
+  color: #8FD4C4;
+}
+
+.md-header {
+  box-shadow: 0 1px 0 var(--acv-line);
+}
+
+/* Acessibilidade: foco de teclado sempre visível */
+.md-typeset a:focus-visible,
+.md-nav__link:focus-visible {
+  outline: 2px solid var(--acv-ochre);
+  outline-offset: 2px;
+}
+
+/* Respeita preferência de menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
