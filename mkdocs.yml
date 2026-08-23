@@ -5,9 +5,10 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: overrides
   language: pt-BR
   font:
-    text: IBM Plex Sans
+    text: Jost
     code: IBM Plex Mono
   icon:
     logo: material/bookshelf
@@ -67,12 +68,16 @@ plugins:
       lang: pt
 
 nav:
-  - Índice do acervo: index.md
+  - Início: index.md
   - Fichamentos:
       - fichamentos/index.md
       - Modelo de fichamento: fichamentos/modelo.md
-  - Método de fichamento: metodo.md
-  - Referências recomendadas: referencias.md
+  - Método: metodo.md
+  - Referências: referencias.md
+  - Sobre o site: sobre.md
 
 extra:
   generator: false
+  # Item do menu que aparece como botão preenchido, à direita — como o
+  # CONTACT da referência. Precisa bater com o título usado no nav.
+  cta: Sobre o site
