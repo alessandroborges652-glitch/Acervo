@@ -72,6 +72,7 @@ nav:
   - Fichamentos:
       - fichamentos/index.md
       - Modelo de fichamento: fichamentos/modelo.md
+      - Escamilla 2001 — Joelho no agachamento: fichamentos/escamilla-2001-joelho-agachamento.md
   - Método: metodo.md
   - Referências: referencias.md
   - Sobre o site: sobre.md
