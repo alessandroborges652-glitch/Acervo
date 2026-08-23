@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{#-
+  Hero da página inicial — mesma composição da referência:
+  imagem sangrando de borda a borda, sobrescrita pequena, título grande em
+  serifada e um botão fantasma, tudo alinhado embaixo à esquerda.
+
+  A arte é um modelo de segmentos de um agachamento — a convenção de desenho
+  da biomecânica — com a linha tracejada da trajetória da barra sobre o meio
+  do pé. É provisória, no lugar de uma fotografia. Para usar uma foto:
+
+    1. coloque o arquivo em  docs/hero.jpg
+    2. no extra.css, descomente o bloco marcado  FOTO DO HERO
+
+  A arte some sozinha quando a foto entra.
+-#}
+
+{% block hero %}
+  {% if page.is_homepage %}
+    <section class="acv-hero" aria-labelledby="acv-hero-titulo">
+
+      <div class="acv-hero__art" aria-hidden="true">
+        <svg viewBox="0 0 700 900" preserveAspectRatio="xMidYMid meet" focusable="false">
+
+          <!-- solo -->
+          <g stroke="currentColor" fill="none" opacity="0.5">
+            <path d="M60 830h600" stroke-width="2.5"/>
+            <g stroke-width="1.4">
+              <path d="M96 830l-16 20M132 830l-16 20M168 830l-16 20M204 830l-16 20M240 830l-16 20M276 830l-16 20M312 830l-16 20M348 830l-16 20M384 830l-16 20M420 830l-16 20M456 830l-16 20M492 830l-16 20M528 830l-16 20M564 830l-16 20M600 830l-16 20M636 830l-16 20"/>
+            </g>
+          </g>
+
+          <!-- trajetória da barra sobre o meio do pé -->
+          <path d="M310 170v666" stroke="currentColor" stroke-width="2"
+                stroke-dasharray="12 11" opacity="0.6" fill="none"/>
+
+          <!-- ângulos de joelho e quadril -->
+          <g stroke="currentColor" fill="none" stroke-width="2" opacity="0.6">
+            <path d="M342.5 582.8A60 60 0 0 0 368.1 650.8"/>
+            <path d="M267.9 497.8A60 60 0 0 1 307.5 572.2"/>
+          </g>
+
+          <!-- segmentos corporais -->
+          <g stroke="currentColor" fill="none" stroke-width="9"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M250 555L330 300"/>
+            <path d="M250 555L400 600"/>
+            <path d="M400 600L290 775"/>
+            <path d="M250 825L290 775L370 825"/>
+            <path d="M330 300L368 258"/>
+          </g>
+
+          <!-- cabeça -->
+          <circle cx="392" cy="232" r="40" stroke="currentColor" stroke-width="7" fill="none"/>
+
+          <!-- barra carregada, anilha vista de frente -->
+          <g stroke="currentColor" fill="none">
+            <circle cx="310" cy="320" r="62" stroke-width="5"/>
+            <circle cx="310" cy="320" r="44" stroke-width="1.6" opacity="0.6"/>
+            <circle cx="310" cy="320" r="17" stroke-width="4"/>
+          </g>
+
+          <!-- articulações -->
+          <g stroke="currentColor" stroke-width="4.5" fill="#111315">
+            <circle cx="290" cy="775" r="13"/>
+            <circle cx="400" cy="600" r="13"/>
+            <circle cx="250" cy="555" r="13"/>
+          </g>
+
+        </svg>
+      </div>
+
+      <div class="acv-hero__inner">
+        <p class="acv-hero__kicker">Bem-vindo à</p>
+        <h1 class="acv-hero__titulo" id="acv-hero-titulo">
+          Biblioteca<br>da Musculação
+        </h1>
+        <a class="acv-hero__btn" href="#1-obras-fichadas">Conheça o acervo</a>
+      </div>
+
+    </section>
+  {% endif %}
+{% endblock %}
