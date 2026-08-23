@@ -85,6 +85,7 @@ Servem para orientar quais obras buscar em seguida.
 Lacunas mais críticas em relação ao uso pretendido (prescrição de treino
 individualizada com justificativa científica), na ordem em que compensa preencher.
 
-*A definir conforme o acervo for crescendo — depende de quais obras entrarem primeiro.*
 1. **Amplitude de movimento e hipertrofia** — é a pergunta que o primeiro fichamento deixa aberta e a que mais afeta decisões diárias de prescrição.
-2. 
+2. **Variáveis do treino** (volume, intensidade, frequência, proximidade da falha) — o acervo hoje sabe descrever cargas articulares, mas não sabe dosar treino.
+3. **Biomecânica de quadril e coluna** — necessário para fechar as decisões de execução que o fichamento atual só resolve pela metade.
+4. **Literatura pós-2001 sobre profundidade de agachamento** — para não fixar o acervo numa posição de 25 anos atrás.
