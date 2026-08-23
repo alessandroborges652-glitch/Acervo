@@ -18,7 +18,11 @@ Toda afirmação num fichamento carrega um dos três:
 
 ## Obras fichadas
 
-*Nenhuma ainda.* Para adicionar a primeira, use o [modelo de fichamento](modelo.md).
+| Obra | Cobre | Extensão lida |
+|---|---|---|
+| [Escamilla 2001 — Joelho no agachamento](escamilla-2001-joelho-agachamento.md) | Biomecânica do joelho no agachamento: forças por ângulo de flexão, atividade muscular, estabilidade ligamentar, amplitude segura | integral (p. 127–141) |
+
+Para adicionar a próxima, use o [modelo de fichamento](modelo.md).
 
 Ao adicionar uma obra:
 
