@@ -1,0 +1,133 @@
+{#-
+  Cabeçalho do Acervo — sobrescreve partials/header.html do Material.
+
+  Segue a composição da referência:
+    · emblema circular à esquerda, com o nome arqueado na borda
+    · links de seção à direita, e o último deles como botão preenchido
+  Gaveta do celular, busca e alternador de tema continuam sendo os do tema.
+
+  O item que vira botão é definido em  extra.cta  no mkdocs.yml.
+-#}
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+
+    {# ---- Emblema, canto superior esquerdo ---- #}
+    
+      href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+      title="{{ config.site_name | e }}"
+      class="acv-selo"
+      aria-label="{{ config.site_name }}"
+      data-md-component="logo"
+    >
+      <svg viewBox="0 0 110 110" role="img" aria-hidden="true" focusable="false">
+        <defs>
+          <path id="acv-arco-cima"  d="M 18.5,55 A 36.5,36.5 0 0 1 91.5,55"/>
+          <path id="acv-arco-baixo" d="M 19,55 A 36,36 0 0 0 91,55"/>
+        </defs>
+
+        <g fill="none" stroke="currentColor">
+          <circle cx="55" cy="55" r="52" stroke-width="1.6"/>
+          <circle cx="55" cy="55" r="42" stroke-width="0.7"/>
+        </g>
+
+        {# anilha vista de frente: anéis concêntricos + estriamento #}
+        <g fill="none" stroke="currentColor" transform="translate(55 55)">
+          <circle r="21.5" stroke-width="1.5"/>
+          <circle r="16"   stroke-width="0.7"/>
+          <circle r="10.5" stroke-width="0.7"/>
+          <circle r="5"    stroke-width="1.2"/>
+          <g stroke-width="1">
+            <path d="M0-21.5v-3"/><path d="M0 21.5v3"/>
+            <path d="M-21.5 0h-3"/><path d="M21.5 0h3"/>
+            <path d="M15.2-15.2l2.1-2.1"/><path d="M-15.2 15.2l-2.1 2.1"/>
+            <path d="M15.2 15.2l2.1 2.1"/><path d="M-15.2-15.2l-2.1-2.1"/>
+          </g>
+        </g>
+
+        <g fill="currentColor" class="acv-selo__texto">
+          <text><textPath href="#acv-arco-cima" startOffset="50%" text-anchor="middle">PERSONAL</textPath></text>
+          <text><textPath href="#acv-arco-baixo" startOffset="50%" text-anchor="middle">ALESSANDRO</textPath></text>
+        </g>
+      </svg>
+    </a>
+
+    {# ---- Botão da gaveta (celular) ---- #}
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+
+    {# ---- Título da página: só aparece em telas estreitas ---- #}
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">{{ config.site_name }}</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {# ---- Seções, canto superior direito ---- #}
+    <nav class="acv-tabs" aria-label="Seções do site">
+      {% set cta = config.extra.cta | d("") %}
+      {% for nav_item in nav %}
+        {% set destino = nav_item.url if nav_item.url is not none
+                         else (nav_item.children | selectattr("url") | map(attribute="url") | first) %}
+        {% if destino is not none %}
+          {% set ativo = " acv-tabs__link--active" if nav_item.active else "" %}
+          {% if nav_item.title == cta %}
+            <a class="acv-tabs__cta" href="{{ destino | url }}">{{ nav_item.title }}</a>
+          {% else %}
+            <a class="acv-tabs__link{{ ativo }}" href="{{ destino | url }}">{{ nav_item.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+  {% if "navigation.tabs.sticky" in features %}
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+  {% endif %}
+</header>
