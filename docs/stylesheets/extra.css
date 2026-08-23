@@ -1,210 +1,1026 @@
 /* ==========================================================================
-   Acervo — identidade visual
-   Paleta de fichário: papel, tinta, e três cores de carimbo de rastreabilidade.
+   ACERVO — identidade visual
+   Padrão extraído de vorrathwoodworks.com (ateliê de marcenaria, Oakland CA)
+   e traduzido para um site de documentação densa.
+
+   O que veio da referência:
+     · serifada de exibição em caixa alta nos títulos maiores  (Sorts Mill Goudy)
+     · geométrica em caixa alta com tracking largo nos rótulos (futura-pt → Jost)
+     · texto corrido cinza sobre branco, entrelinha muito aberta (2.0)
+     · um único acento — marrom nogueira #6F2B06
+     · régua curta de 54×3px como assinatura abaixo dos títulos
+     · botões quadrados (raio 0), borda de 2px, transição de 0.17s
+     · rodapé preto, centralizado, caixa alta com tracking largo
+
+   O que foi adaptado (o Acervo é denso em texto; a referência é portfólio):
+     · escala tipográfica reduzida — 80px de título não cabe numa página de leitura
+     · entrelinha de 1.85 em vez de 2.0, e tabelas mantidas compactas
+     · os três carimbos de rastreabilidade se distinguem por TRATAMENTO
+       (sólido · contornado · tracejado), não por três matizes diferentes,
+       para não quebrar a regra de acento único da referência
+     · tema escuro acrescentado — a referência não tem, mas o site já oferecia
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap');
+/* Jost substitui a futura-pt da referência (Adobe Fonts, licença paga);
+   Sorts Mill Goudy é a mesma serifada usada nos títulos de lá. */
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-  --acv-paper:        #EFF1EA;
-  --acv-paper-card:   #F7F8F3;
-  --acv-ink:          #16211C;
-  --acv-ink-soft:     #445048;
-  --acv-line:         #C7C2AE;
-  --acv-teal:         #1F5C52;
-  --acv-teal-soft:    #DDE8E4;
-  --acv-ochre:        #A87B2E;
-  --acv-ochre-soft:   #F0E4CC;
-  --acv-brick:        #8C3F2E;
-  --acv-brick-soft:   #F1DFD8;
-}
+  /* ---- Paleta (valores lidos direto dos estilos computados da referência) ---- */
+  --acv-white:      #FFFFFF;  /* fundo do corpo                     */
+  --acv-shell:      #F2F2F2;  /* fundo do cabeçalho                 */
+  --acv-mist:       #FAFAFA;  /* faixas de seção alternadas         */
+  --acv-black:      #000000;  /* títulos e rodapé                   */
+  --acv-near:       #222222;  /* escuro secundário                  */
+  --acv-grey:       #666666;  /* texto corrido                      */
+  --acv-grey-soft:  #767976;  /* texto terciário / desativado       */
+  --acv-slate:      #444746;  /* cinza esverdeado da referência     */
+  --acv-line:       #E3E3E3;  /* divisores                          */
+  --acv-line-soft:  #EEEEEE;
+  --acv-walnut:     #6F2B06;  /* ACENTO ÚNICO — nogueira            */
+  --acv-walnut-dim: #8A4520;  /* estado hover                       */
+  --acv-walnut-wash:#FBF4F0;  /* fundo de realce                    */
 
-/* ---- Tema claro ---- */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color:        var(--acv-teal);
-  --md-primary-fg-color--light: #2C7A6C;
-  --md-primary-fg-color--dark:  #14403A;
-  --md-accent-fg-color:         var(--acv-ochre);
-  --md-default-bg-color:        var(--acv-paper);
-  --md-default-fg-color:        var(--acv-ink);
-  --md-default-fg-color--light: var(--acv-ink-soft);
-  --md-typeset-a-color:         var(--acv-teal);
-}
+  /* ---- Tipografia ---- */
+  --acv-display: 'Sorts Mill Goudy', 'Iowan Old Style', Georgia, serif;
+  --acv-sans:    'Jost', 'Futura', 'Century Gothic', 'Avenir Next', sans-serif;
+  --acv-mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
-/* ---- Tema escuro ---- */
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color:  #2C7A6C;
-  --md-accent-fg-color:   #D4A45A;
-  --md-default-bg-color:  #131A17;
-  --md-typeset-a-color:   #6FBFAE;
-}
-
-/* ---- Tipografia ---- */
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.md-typeset h1 {
-  color: var(--md-default-fg-color);
-  line-height: 1.1;
-}
-
-.md-typeset h2 {
-  border-bottom: 1px solid var(--acv-line);
-  padding-bottom: 0.3em;
-  margin-top: 2em;
-}
-
-/* ---- Tabelas: densas e legíveis, é o formato do índice ---- */
-.md-typeset table:not([class]) {
-  font-size: 0.76rem;
-  border: 1px solid var(--acv-line);
-}
-
-.md-typeset table:not([class]) th {
-  background: var(--acv-teal-soft);
-  color: var(--acv-teal);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
-  background: #1C2E29;
-  color: #8FD4C4;
+  /* ---- Ritmo e movimento (da referência) ---- */
+  --acv-rule-w:  54px;
+  --acv-rule-h:  3px;
+  --acv-ease:    0.17s ease-out;
+  --acv-ease-lg: 0.35s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
 /* ==========================================================================
-   Carimbos de rastreabilidade
-   Uso no markdown:  [OBRA]{.obra}  ·  [COMENTÁRIO]{.comentario}  ·  [NÃO ENCONTRADO]{.nao-encontrado}
-   (requer a extensão attr_list, já ativada no mkdocs.yml)
+   1. Mapeamento para as variáveis do tema Material
+   ========================================================================== */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--acv-shell);
+  --md-primary-fg-color--light: #FAFAFA;
+  --md-primary-fg-color--dark:  #E0E0E0;
+  --md-primary-bg-color:        var(--acv-black);
+  --md-primary-bg-color--light: var(--acv-grey);
+
+  --md-accent-fg-color:         var(--acv-walnut);
+  --md-accent-fg-color--transparent: var(--acv-walnut-wash);
+
+  --md-default-bg-color:        var(--acv-white);
+  --md-default-fg-color:        var(--acv-near);
+  --md-default-fg-color--light: var(--acv-grey);
+  --md-default-fg-color--lighter: var(--acv-grey-soft);
+  --md-default-fg-color--lightest: var(--acv-line);
+
+  --md-typeset-color:           var(--acv-grey);
+  --md-typeset-a-color:         var(--acv-walnut);
+  --md-code-bg-color:           var(--acv-mist);
+  --md-code-fg-color:           var(--acv-near);
+  --md-footer-bg-color:         var(--acv-black);
+  --md-footer-bg-color--dark:   var(--acv-black);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 200;
+  --md-primary-fg-color:        #16181A;
+  --md-primary-bg-color:        #F0EDE9;
+  --md-accent-fg-color:         #D08A5A;   /* nogueira clareada para contraste */
+
+  --md-default-bg-color:        #111315;
+  --md-default-fg-color:        #F0EDE9;
+  --md-default-fg-color--light: #B3B0AC;
+  --md-default-fg-color--lighter: #85827E;
+  --md-default-fg-color--lightest: #33363A;
+
+  --md-typeset-color:           #C9C6C2;
+  --md-typeset-a-color:         #D08A5A;
+  --md-code-bg-color:           #1A1D1F;
+  --md-footer-bg-color:         #000000;
+
+  --acv-line:      #2A2D30;
+  --acv-line-soft: #212427;
+  --acv-mist:      #1A1D1F;
+  --acv-walnut:      #D08A5A;
+  --acv-walnut-dim:  #E5A379;
+  --acv-walnut-wash: #241A14;
+}
+
+/* ==========================================================================
+   2. Corpo do texto — a entrelinha aberta é a marca mais forte da referência
+   ========================================================================== */
+
+body,
+.md-typeset {
+  font-family: var(--acv-sans);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.md-typeset {
+  font-size: 0.875rem;         /* ≈17.5px — a referência usa 18px */
+  line-height: 1.85;           /* referência: 2.0, reduzido para densidade */
+  letter-spacing: 0.01em;
+}
+
+.md-typeset p {
+  margin: 0 0 1.5em;
+}
+
+/* ==========================================================================
+   3. Títulos
+   H1 · serifada em caixa alta (Sorts Mill Goudy)
+   H2 · geométrica em caixa alta com tracking largo + régua de assinatura
+   H3 · o "eyebrow" da referência: pequeno, caixa alta, tracking muito largo
+   ========================================================================== */
+
+.md-typeset h1 {
+  font-family: var(--acv-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color);
+  margin: 0 0 0.9em;
+}
+
+.md-typeset h2 {
+  font-family: var(--acv-sans);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color);
+  margin: 3.2em 0 0;
+  padding: 0;
+  border: 0;
+}
+
+/* A régua curta de 54×3px — assinatura da referência */
+.md-typeset h2::after {
+  content: "";
+  display: block;
+  width: var(--acv-rule-w);
+  height: var(--acv-rule-h);
+  background: var(--acv-walnut);
+  margin: 0.9rem 0 1.9rem;
+}
+
+.md-typeset h3 {
+  font-family: var(--acv-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color);
+  margin: 2.4em 0 0.9em;
+}
+
+.md-typeset h4 {
+  font-family: var(--acv-sans);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acv-grey);
+  margin: 2em 0 0.7em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h4 { color: var(--md-default-fg-color--light); }
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--acv-sans);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+/* O primeiro título da página não precisa do respiro de topo */
+.md-typeset h1:first-child,
+.md-typeset h2:first-child,
+.md-typeset h3:first-child { margin-top: 0; }
+
+/* Âncora de permalink discreta */
+.md-typeset .headerlink {
+  color: var(--acv-line);
+  transition: color var(--acv-ease);
+}
+.md-typeset :hover > .headerlink { color: var(--acv-walnut); }
+
+/* ==========================================================================
+   4. Cabeçalho — cinza-concha com navegação preta em caixa alta
+   ========================================================================== */
+
+.md-header {
+  background: var(--acv-shell);
+  color: var(--acv-black);
+  box-shadow: none;
+  border-bottom: 1px solid var(--acv-line);
+  transition: background var(--acv-ease);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: #16181A;
+  color: #F0EDE9;
+  border-bottom-color: var(--acv-line);
+}
+
+.md-header__title,
+.md-header__topic {
+  font-family: var(--acv-sans);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.md-header__button { color: currentColor; }
+
+/* Barra de abas superior, se ativada */
+.md-tabs {
+  background: var(--acv-shell);
+  color: var(--acv-black);
+  border-bottom: 1px solid var(--acv-line);
+}
+[data-md-color-scheme="slate"] .md-tabs { background: #16181A; color: #F0EDE9; }
+
+.md-tabs__link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 1;
+  color: var(--acv-grey);
+  transition: color var(--acv-ease);
+}
+.md-tabs__link--active,
+.md-tabs__link:hover { color: var(--acv-walnut); }
+
+/* Campo de busca */
+.md-search__form {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  transition: background var(--acv-ease);
+}
+.md-search__form:hover { background: rgba(0, 0, 0, 0.09); }
+[data-md-color-scheme="slate"] .md-search__form { background: rgba(255, 255, 255, 0.07); }
+[data-md-color-scheme="slate"] .md-search__form:hover { background: rgba(255, 255, 255, 0.12); }
+
+.md-search__input {
+  font-family: var(--acv-sans);
+  letter-spacing: 0.06em;
+}
+.md-search__input::placeholder {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+/* ==========================================================================
+   5. Navegação lateral — rótulos em caixa alta, links quietos
+   ========================================================================== */
+
+.md-nav {
+  font-family: var(--acv-sans);
+  font-size: 0.74rem;
+}
+
+.md-nav__title {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--acv-grey-soft);
+}
+
+.md-nav__link {
+  color: var(--acv-grey);
+  letter-spacing: 0.04em;
+  transition: color var(--acv-ease);
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus { color: var(--acv-walnut); }
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--acv-walnut);
+  font-weight: 500;
+}
+
+/* Sumário lateral direito */
+.md-nav--secondary .md-nav__title {
+  box-shadow: none;
+  border-bottom: 1px solid var(--acv-line);
+  padding-bottom: 0.6rem;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  border-left: 2px solid var(--acv-walnut);
+  margin-left: -0.6rem;
+  padding-left: calc(0.6rem - 2px);
+}
+
+/* ==========================================================================
+   6. Links e botões — quadrados, borda de 2px, caixa alta com tracking
+   ========================================================================== */
+
+.md-typeset a {
+  color: var(--acv-walnut);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--acv-ease), color var(--acv-ease);
+}
+
+.md-typeset a:hover {
+  color: var(--acv-walnut-dim);
+  border-bottom-color: currentColor;
+}
+
+/* Botão primário — o "CONTACT" da referência: preenchido, texto branco */
+.md-typeset .md-button {
+  font-family: var(--acv-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border: 2px solid var(--acv-walnut);
+  border-radius: 0;
+  color: var(--acv-walnut);
+  background: transparent;
+  transition: background-color var(--acv-ease), color var(--acv-ease);
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background: var(--acv-walnut);
+  color: var(--acv-white);
+  border-color: var(--acv-walnut);
+}
+
+.md-typeset .md-button--primary {
+  background: var(--acv-walnut);
+  color: var(--acv-white);
+}
+.md-typeset .md-button--primary:hover {
+  background: transparent;
+  color: var(--acv-walnut);
+}
+
+/* ==========================================================================
+   7. Tabelas — o índice do acervo vive aqui, então densidade vem antes de ar
+   ========================================================================== */
+
+.md-typeset table:not([class]) {
+  font-size: 0.74rem;
+  line-height: 1.6;
+  border: 0;
+  border-top: 2px solid var(--acv-black);
+  border-bottom: 1px solid var(--acv-line);
+  border-radius: 0;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-top-color: var(--md-default-fg-color--light);
+}
+
+.md-typeset table:not([class]) th {
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-family: var(--acv-sans);
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1em 1.1em;
+  border-bottom: 1px solid var(--acv-line);
+  vertical-align: bottom;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.9em 1.1em;
+  border-top: 1px solid var(--acv-line-soft);
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--acv-mist);
+  transition: background var(--acv-ease);
+}
+
+/* ==========================================================================
+   8. Carimbos de rastreabilidade
+   Distinguidos por TRATAMENTO, não por matiz — a referência tem um acento só.
+     OBRA            → sólido      (o botão preenchido)
+     COMENTÁRIO      → contornado  (o ghost button)
+     NÃO ENCONTRADO  → tracejado   (ausência)
+   Uso no markdown: <span class="obra">OBRA</span>
    ========================================================================== */
 
 .md-typeset .obra,
 .md-typeset .comentario,
 .md-typeset .nao-encontrado {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.68rem;
+  display: inline-block;
+  font-family: var(--acv-sans);
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 2px 8px;
-  border-radius: 3px;
-  border: 1px dashed currentColor;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 3px 10px;
+  border-radius: 0;
   white-space: nowrap;
   text-decoration: none;
+  vertical-align: baseline;
 }
 
 .md-typeset .obra {
-  color: var(--acv-teal);
-  background: var(--acv-teal-soft);
+  background: var(--acv-walnut);
+  color: var(--acv-white);
+  border: 1px solid var(--acv-walnut);
 }
+[data-md-color-scheme="slate"] .md-typeset .obra { color: #111315; }
 
 .md-typeset .comentario {
-  color: var(--acv-ochre);
-  background: var(--acv-ochre-soft);
+  background: transparent;
+  color: var(--acv-walnut);
+  border: 1px solid var(--acv-walnut);
 }
 
 .md-typeset .nao-encontrado {
-  color: var(--acv-brick);
-  background: var(--acv-brick-soft);
-}
-
-[data-md-color-scheme="slate"] .md-typeset .obra {
-  color: #8FD4C4; background: #1C2E29;
-}
-[data-md-color-scheme="slate"] .md-typeset .comentario {
-  color: #E0BE7C; background: #33291A;
+  background: transparent;
+  color: var(--acv-grey-soft);
+  border: 1px dashed var(--acv-grey-soft);
 }
 [data-md-color-scheme="slate"] .md-typeset .nao-encontrado {
-  color: #E0A08C; background: #33211C;
+  color: var(--md-default-fg-color--lighter);
+  border-color: var(--md-default-fg-color--lighter);
 }
 
 /* ==========================================================================
-   Status do mapa temático
-   Uso:  [lacuna]{.st-lacuna}  ·  [superficial]{.st-superficial}  ·  [profundo]{.st-profundo}
+   9. Status do mapa temático
+   Mesma lógica: sólido → contornado → tracejado, do preenchido ao vazio.
    ========================================================================== */
 
 .md-typeset .st-lacuna,
 .md-typeset .st-superficial,
 .md-typeset .st-profundo {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  display: inline-block;
+  font-family: var(--acv-sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 2px 9px;
-  border-radius: 10px;
+  line-height: 1.4;
+  padding: 3px 11px;
+  border-radius: 0;
   white-space: nowrap;
   text-decoration: none;
 }
 
-.md-typeset .st-lacuna      { color: var(--acv-brick); background: var(--acv-brick-soft); }
-.md-typeset .st-superficial { color: var(--acv-ochre); background: var(--acv-ochre-soft); }
-.md-typeset .st-profundo    { color: var(--acv-teal);  background: var(--acv-teal-soft); }
+.md-typeset .st-profundo {
+  background: var(--acv-walnut);
+  color: var(--acv-white);
+  border: 1px solid var(--acv-walnut);
+}
+[data-md-color-scheme="slate"] .md-typeset .st-profundo { color: #111315; }
 
-/* ---- Cabeçalho de ficha (bloco de metadados no topo de cada fichamento) ---- */
+.md-typeset .st-superficial {
+  background: transparent;
+  color: var(--acv-walnut);
+  border: 1px solid var(--acv-walnut);
+}
+
+.md-typeset .st-lacuna {
+  background: transparent;
+  color: var(--acv-grey-soft);
+  border: 1px dashed var(--acv-line);
+}
+[data-md-color-scheme="slate"] .md-typeset .st-lacuna {
+  color: var(--md-default-fg-color--lighter);
+  border-color: var(--acv-line);
+}
+
+/* ==========================================================================
+   10. Cabeçalho de ficha — traduz o bloco "eyebrow + régua + texto"
+   ========================================================================== */
+
 .md-typeset .ficha-meta {
-  background: var(--acv-paper-card);
-  border: 1px solid var(--acv-line);
-  border-left: 3px solid var(--acv-teal);
-  border-radius: 3px;
-  padding: 14px 18px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.74rem;
-  line-height: 1.7;
-  color: var(--acv-ink-soft);
-  margin-bottom: 1.6em;
+  background: var(--acv-mist);
+  border: 0;
+  border-left: var(--acv-rule-h) solid var(--acv-walnut);
+  border-radius: 0;
+  padding: 1.4rem 1.6rem;
+  font-family: var(--acv-sans);
+  font-size: 0.78rem;
+  line-height: 2;
+  color: var(--acv-grey);
+  margin: 0 0 2.4em;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .ficha-meta {
-  background: #1A2320;
-  color: #A8B5AE;
+  background: var(--acv-mist);
+  color: var(--md-typeset-color);
 }
 
 .md-typeset .ficha-meta strong {
-  color: var(--acv-teal);
+  display: inline-block;
+  min-width: 9.5em;
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.68rem;
 }
 
-[data-md-color-scheme="slate"] .md-typeset .ficha-meta strong { color: #8FD4C4; }
-
-/* ---- Rodapé de conexões ---- */
+/* Rodapé de conexões */
 .md-typeset .conexoes {
   border-top: 1px solid var(--acv-line);
-  padding-top: 1em;
-  font-size: 0.82rem;
+  padding-top: 1.6em;
+  margin-top: 3.2em;
+  font-size: 0.78rem;
+  color: var(--acv-grey);
 }
 
-/* ---- Detalhes de acabamento ---- */
+[data-md-color-scheme="slate"] .md-typeset .conexoes { color: var(--md-typeset-color); }
+
+/* ==========================================================================
+   11. Listas, citações, código, admonitions
+   ========================================================================== */
+
+.md-typeset ul li,
+.md-typeset ol li { margin-bottom: 0.55em; }
+
+.md-typeset ul li::marker { color: var(--acv-walnut); }
+
+.md-typeset blockquote {
+  border-left: var(--acv-rule-h) solid var(--acv-walnut);
+  color: var(--acv-grey);
+  font-family: var(--acv-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.7;
+  padding-left: 1.6rem;
+  margin: 2.2em 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote { color: var(--md-typeset-color); }
+
 .md-typeset code {
-  background: var(--acv-teal-soft);
-  color: var(--acv-teal);
+  font-family: var(--acv-mono);
+  font-size: 0.82em;
+  background: var(--acv-mist);
+  color: var(--acv-near);
+  border: 1px solid var(--acv-line);
+  border-radius: 0;
+  padding: 1px 5px;
 }
 
-[data-md-color-scheme="slate"] .md-typeset code {
-  background: #1C2E29;
-  color: #8FD4C4;
+[data-md-color-scheme="slate"] .md-typeset code { color: var(--md-default-fg-color); }
+
+.md-typeset pre > code {
+  border: 1px solid var(--acv-line);
+  border-radius: 0;
 }
 
-.md-header {
-  box-shadow: 0 1px 0 var(--acv-line);
+/* Admonitions — o Material pinta cada tipo com uma cor própria (azul, verde,
+   âmbar…). Isso quebra a regra de acento único da referência, então todos são
+   normalizados para nogueira. A distinção de gravidade passa a ser a mesma
+   lógica dos carimbos: contornado para informativo, sólido para alerta.       */
+
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.8rem;
+  border: 0 !important;
+  border-left: var(--acv-rule-h) solid var(--acv-walnut) !important;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--acv-mist);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--acv-sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color);
+  background: transparent !important;
+  border-radius: 0;
+  border: 0 !important;
+  padding-top: 0.9rem;
+  padding-bottom: 0.5rem;
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: var(--acv-walnut) !important;
+}
+
+/* Alertas: barra de título preenchida — mesmo gesto do carimbo OBRA */
+.md-typeset .admonition.warning,
+.md-typeset .admonition.caution,
+.md-typeset .admonition.danger,
+.md-typeset .admonition.attention,
+.md-typeset .admonition.failure,
+.md-typeset details.warning,
+.md-typeset details.danger {
+  background: var(--acv-walnut-wash);
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .caution > .admonition-title,
+.md-typeset .danger > .admonition-title,
+.md-typeset .attention > .admonition-title,
+.md-typeset .failure > .admonition-title,
+.md-typeset details.warning > summary,
+.md-typeset details.danger > summary {
+  background: var(--acv-walnut) !important;
+  color: var(--acv-white);
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .warning > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .caution > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .danger > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .attention > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .failure > .admonition-title {
+  color: #111315;
+}
+
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .caution > .admonition-title::before,
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .attention > .admonition-title::before,
+.md-typeset .failure > .admonition-title::before {
+  background-color: var(--acv-white) !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .warning > .admonition-title::before,
+[data-md-color-scheme="slate"] .md-typeset .danger > .admonition-title::before {
+  background-color: #111315 !important;
+}
+
+/* Abas de conteúdo */
+.md-typeset .tabbed-labels > label {
+  font-family: var(--acv-sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.md-typeset .tabbed-set > input:checked + label {
+  color: var(--acv-walnut);
+  border-color: var(--acv-walnut);
+}
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--acv-line);
+  margin: 3em 0;
+}
+
+/* ==========================================================================
+   12. Rodapé — preto, centralizado, caixa alta com tracking largo
+   ========================================================================== */
+
+.md-footer {
+  background: var(--md-footer-bg-color);
+  color: var(--acv-grey);
+}
+
+.md-footer-meta {
+  background: var(--md-footer-bg-color);
+  font-family: var(--acv-sans);
+}
+
+.md-footer-meta__inner {
+  justify-content: center;
+  padding: 2.4rem 0.8rem;
+}
+
+.md-copyright {
+  width: auto;
+  text-align: center;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--acv-grey);
+}
+
+.md-copyright__highlight { color: #FFFFFF; }
+
+.md-footer__link {
+  transition: opacity var(--acv-ease);
+}
+
+.md-footer__title {
+  font-family: var(--acv-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.md-footer__direction {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   13. Cabeçalho — emblema à esquerda, seções à direita, largura total
+   A referência não confina o cabeçalho à coluna de texto: a logo encosta na
+   margem esquerda da janela e o menu na direita.
+   ========================================================================== */
+
+.md-header__inner.md-grid {
+  max-width: none;
+  height: auto;
+  min-height: 5.6rem;
+  padding: 0 2.4rem;
+  gap: 0.4rem;
+}
+
+/* ---- Emblema circular ---- */
+
+.acv-selo {
+  display: block;
+  width: 4.3rem;
+  height: 4.3rem;
+  flex-shrink: 0;
+  color: currentColor;
+  transition: opacity var(--acv-ease);
+}
+
+.acv-selo:hover { opacity: 0.65; }
+.acv-selo:focus-visible { outline: 2px solid var(--acv-walnut); outline-offset: 4px; }
+
+.acv-selo svg { width: 100%; height: 100%; display: block; }
+
+.acv-selo__texto text {
+  font-family: var(--acv-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+}
+
+/* ==========================================================================
+   14. Seções do cabeçalho — links à direita, o último como botão preenchido
+   ========================================================================== */
+
+.acv-tabs {
+  display: none;
+  align-items: center;
+  gap: 2.4rem;
+  margin-left: auto;
+  padding-left: 3rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .acv-tabs { display: flex; }
+  /* Com emblema à esquerda e seções à direita, o título vira redundância */
+  .md-header__title { display: none; }
+}
+
+.acv-tabs__link {
+  font-family: var(--acv-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: currentColor;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color var(--acv-ease), border-color var(--acv-ease);
+}
+
+.acv-tabs__link:hover { color: var(--acv-walnut); }
+
+.acv-tabs__link--active {
+  color: var(--acv-walnut);
+  border-bottom-color: var(--acv-walnut);
+}
+
+/* O botão preenchido — mesmo papel do CONTACT da referência */
+.acv-tabs__cta {
+  font-family: var(--acv-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.85rem 1.5rem;
+  background: var(--acv-walnut);
+  color: #FFFFFF;
+  border: 2px solid var(--acv-walnut);
+  border-radius: 0;
+  text-decoration: none;
+  transition: background-color var(--acv-ease), color var(--acv-ease);
+}
+
+.acv-tabs__cta:hover,
+.acv-tabs__cta:focus-visible {
+  background: transparent;
+  color: var(--acv-walnut);
+}
+
+[data-md-color-scheme="slate"] .acv-tabs__cta { color: #111315; }
+[data-md-color-scheme="slate"] .acv-tabs__cta:hover,
+[data-md-color-scheme="slate"] .acv-tabs__cta:focus-visible { color: var(--acv-walnut); }
+
+.acv-tabs__link:focus-visible,
+.acv-tabs__cta:focus-visible {
+  outline: 2px solid var(--acv-walnut);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   15. Hero da página inicial
+   Imagem sangrando de borda a borda, sobrescrita, título e um botão fantasma,
+   tudo embaixo à esquerda, alinhado à mesma margem do emblema.
+   O hero é escuro nos dois temas — é peça de imagem, não de leitura.
+   ========================================================================== */
+
+.acv-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(calc(100vh - 5.6rem), 820px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #111315;
+}
+
+/* ---- FOTO DO HERO ----------------------------------------------------
+   Fotografia em preto e branco de barra carregada (docs/hero.jpg). Enquadrada à
+   direita do centro para a anilha grande cair sob o texto, que é branco.
+   Para voltar ao desenho de segmentos, basta comentar este bloco.
+   ---------------------------------------------------------------------- */
+
+.acv-hero {
+  background-image: url('../hero.jpg');
+  background-size: cover;
+  background-position: 58% 50%;
+  background-repeat: no-repeat;
+}
+
+.acv-hero__art { display: none; }
+
+.acv-hero__art {
+  position: absolute;
+  z-index: -1;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52%;
+  height: 94%;
+  color: #C87A45;
+  opacity: 0.5;
+}
+
+.acv-hero__art svg { width: 100%; height: 100%; display: block; }
+
+/* Véu: escurece a base e a esquerda, onde assenta o texto branco.
+   A foto já é escura nesse canto; isto só garante o contraste em qualquer
+   proporção de tela, quando o recorte desloca o enquadramento. */
+.acv-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to top,   rgba(12, 13, 15, 0.82) 0%, rgba(12, 13, 15, 0) 62%),
+    linear-gradient(to right, rgba(12, 13, 15, 0.62) 0%, rgba(12, 13, 15, 0) 55%);
+  pointer-events: none;
+}
+
+.acv-hero__inner {
+  width: 100%;
+  padding: 0 2.4rem 5.4rem;
+}
+
+.acv-hero__kicker {
+  font-family: var(--acv-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1rem;
+}
+
+.acv-hero__titulo {
+  font-family: var(--acv-display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.acv-hero__btn {
+  display: inline-block;
+  margin-top: 2.6rem;
+  font-family: var(--acv-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.9rem;
+  border: 2px solid #FFFFFF;
+  border-radius: 0;
+  color: #FFFFFF;
+  background: transparent;
+  text-decoration: none;
+  transition: background-color var(--acv-ease), color var(--acv-ease);
+}
+
+.acv-hero__btn:hover,
+.acv-hero__btn:focus-visible {
+  background: #FFFFFF;
+  color: #111315;
+}
+
+.acv-hero__btn:focus-visible {
+  outline: 2px solid #C87A45;
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-header__inner.md-grid { min-height: 4rem; padding: 0 1rem; }
+  .acv-selo { width: 3.1rem; height: 3.1rem; }
+  .acv-hero { min-height: min(calc(100vh - 4rem), 640px); }
+  .acv-hero__inner { padding: 0 1.4rem 4rem; }
+  .acv-hero__art { width: 42%; right: 1%; opacity: 0.42; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .acv-selo { width: 2.7rem; height: 2.7rem; }
+  .acv-hero { min-height: 74vh; }
+  .acv-hero__inner { padding: 0 1.1rem 3.2rem; }
+  /* "MUSCULAÇÃO" numa linha só estoura a tela; a escala precisa cair mais */
+  .acv-hero__titulo { font-size: clamp(1.75rem, 8.6vw, 2.6rem); }
+  .acv-hero__kicker { font-size: 0.62rem; letter-spacing: 0.26em; }
+  .acv-hero__btn { padding: 0.75rem 1.4rem; font-size: 0.62rem; letter-spacing: 0.2em; }
+  /* Em tela estreita o recorte fecha muito; puxa o enquadramento e reforça o véu */
+  .acv-hero { background-position: 62% 50%; }
+  .acv-hero::before {
+    background: linear-gradient(to top, rgba(12, 13, 15, 0.88) 0%, rgba(12, 13, 15, 0.15) 70%);
+  }
+}
+
+/* ==========================================================================
+   16. Movimento — 0.17s ease-out é a velocidade da casa
+   ========================================================================== */
+
+.md-content__inner {
+  animation: acv-entrada 0.4s ease-out both;
+}
+
+@keyframes acv-entrada {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* Acessibilidade: foco de teclado sempre visível */
 .md-typeset a:focus-visible,
-.md-nav__link:focus-visible {
-  outline: 2px solid var(--acv-ochre);
-  outline-offset: 2px;
+.md-nav__link:focus-visible,
+.md-typeset .md-button:focus-visible {
+  outline: 2px solid var(--acv-walnut);
+  outline-offset: 3px;
 }
 
 /* Respeita preferência de menos movimento */
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *,
+  .md-content__inner {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   17. Telas estreitas — o tracking largo precisa afrouxar para caber
+   ========================================================================== */
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset { font-size: 0.84rem; line-height: 1.78; }
+  .md-typeset h2 { font-size: 1.1rem; letter-spacing: 0.1em; }
+  .md-typeset h3 { letter-spacing: 0.14em; }
+  .md-typeset table:not([class]) { font-size: 0.7rem; }
+  .md-typeset .ficha-meta strong { min-width: 0; display: block; }
+  .md-footer-meta__inner { padding: 1.6rem 0.8rem; }
 }
