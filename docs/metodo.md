@@ -85,6 +85,35 @@ Este rodapé é o que transforma arquivos isolados em acervo. Sempre que um
 fichamento novo divergir de um já existente, a divergência também é registrada no
 índice.
 
+### Seção final — Simplificando o estudo
+
+Sempre a última seção. É o mesmo conteúdo dos Níveis 1 e 2 reescrito em **linguagem
+direta, para leitura rápida** — sem carimbos, sem tabelas, sem citação de página.
+Serve para reler antes de um atendimento e para explicar a obra a quem não vai ler o
+fichamento inteiro.
+
+Subtópicos fixos:
+
+- **A ideia em uma frase** — o que a obra sustenta, em uma frase.
+- **O que o estudo mostrou** — os achados centrais, um parágrafo curto cada,
+  começando pela conclusão em negrito.
+- **O que muda no treino** — as decisões concretas, separadas por tipo de aluno
+  quando fizer sentido.
+- **Coisas que o estudo derruba** — lista numerada de crenças comuns que o material
+  contradiz.
+- **O que este estudo não responde** — os limites em linguagem simples.
+
+Duas regras que sustentam a seção:
+
+1. **Nada de novo aparece aqui.** Se um argumento não está nos Níveis 1 e 2, ele não
+   entra — simplificar é reescrever, não acrescentar.
+2. **Abrir com a ressalva** de que os dados, as citações e a localização por página
+   estão nas seções acima. Sem isso, a seção simplificada pode ser confundida com a
+   parte rastreável do fichamento.
+
+O que já existe em outra seção — o parágrafo de explicação ao aluno, por exemplo — não
+se repete aqui.
+
 ## 3. Regras de citação
 
 - Citar sempre com localização verificável: `(cap. 4, p. 112)`, `(seção 3.2)`,
