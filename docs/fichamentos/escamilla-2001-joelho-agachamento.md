@@ -361,6 +361,87 @@ isoladamente.
 
 ---
 
+## Simplificando o estudo
+
+*Tudo abaixo é o mesmo conteúdo das seções anteriores, dito em linguagem direta, para leitura
+rápida. Os dados, as citações e a localização por página estão nos Níveis 1 e 2 acima.*
+
+### A ideia em uma frase
+
+Quanto mais o joelho dobra, maior a carga sobre ele — então a **profundidade do agachamento é uma
+forma de dosar carga articular**, e não uma questão de certo ou errado.
+
+### O que o estudo mostrou
+
+**O agachamento é seguro para o joelho saudável.** A força que ele gera nos ligamentos cruzados é
+uma fração da que esses ligamentos aguentam. O cruzado posterior suporta cerca de 4000 N e o
+agachamento gera no máximo 2700 N; o cruzado anterior suporta cerca de 1700 N e o agachamento gera
+no máximo 500 N.
+
+**Quem agacha tende a ter o joelho mais estável.** Sete estudos olharam isso. Cinco não acharam
+nenhum prejuízo, e dois acharam joelhos *mais* firmes em quem treina agachamento do que em quem
+não treina.
+
+**A carga cresce conforme você desce.** Vale para os três tipos de força: a que empurra os ossos um
+contra o outro, a que "puxa" os ligamentos e a que prensa a rótula contra o fêmur. Todas aumentam
+com a flexão do joelho e chegam ao pico lá embaixo.
+
+**O quadríceps para de ganhar ativação por volta dos 90°.** Descer mais que isso não recruta mais
+quadríceps.
+
+**Não é a profundidade que mais aumenta a carga — é a pressa.** Descer rápido aumenta as forças em
+15 a 30%. Quicar no fundo aumenta em 33%. E continuar repetindo já cansado aumenta em até 85%.
+
+### O que muda no treino
+
+**Aluno com joelho sensível ou voltando de lesão:** trabalhe entre 0° e 50° de flexão. É a faixa em
+que a carga no joelho é pequena.
+
+**Aluno saudável:** o agachamento paralelo (até uns 90–100°) atende bem. Se ele agacha mais fundo
+por gosto, esporte ou mobilidade, tudo bem — só não use o argumento "pega mais quadríceps", porque
+não pega.
+
+**Sempre:** descida controlada, sem quicar no fundo, e encerrar a série antes de a técnica se
+desmanchar. Isso pesa mais na segurança do que a profundidade escolhida.
+
+**Pé mais afastado:** aumenta a compressão no joelho em 15%. Se o objetivo é poupar o joelho,
+prefira o afastamento mais estreito.
+
+**Tronco mais inclinado à frente:** alivia o joelho e carrega mais a lombar. É uma troca, não uma
+melhora.
+
+### Cinco coisas que o estudo derruba
+
+1. **"Agachamento estraga o joelho."** Não estraga. As forças ficam bem abaixo do que os ligamentos
+   suportam.
+2. **"Rode o pé pra fora pra ativar o vasto medial."** Quatro estudos testaram. O ângulo do pé não
+   muda nada na ativação.
+3. **"Máquina é mais segura para quem tem joelho ruim."** O agachamento na máquina gerou 30 a 40%
+   *mais* força de cisalhamento que a barra livre.
+4. **"Afastamento largo protege o joelho."** Ao contrário: gera mais compressão.
+5. **"Se dói o joelho, troque agachamento por cadeira extensora."** No único teste feito dentro do
+   joelho de pessoas vivas, a extensora com amplitude parcial esticou *mais* o ligamento cruzado
+   anterior do que agachar.
+
+### O que este estudo não responde
+
+- **Se amplitude maior gera mais hipertrofia.** O estudo mede força e ativação, não resultado de treino.
+- **Séries, repetições, descanso, frequência.** Nada disso é tratado.
+- **Quanta carga chega a machucar.** O próprio autor diz que ninguém sabe esse limite.
+- **Quadril e coluna.** Só o joelho é analisado.
+
+**Dois cuidados ao citar este artigo.** Primeiro: ele é de 2001 e a literatura sobre agachamento
+profundo mudou bastante depois. Segundo: o autor recomenda evitar o agachamento profundo, mas a
+evidência que ele mesmo apresenta ao longo do texto não sustenta bem essa recomendação — os estudos
+de estabilidade não mostram prejuízo, e a pressão sobre a rótula até se estabiliza abaixo dos 100°.
+
+**Sobre quem foram os dados.** A maior parte vem de homens já treinados — powerlifters,
+halterofilistas, fisiculturistas — levantando cargas altas. Os números exatos não transferem direto
+para iniciantes, mulheres ou idosos. O que transfere é o comportamento: a carga cresce com a flexão,
+com a velocidade e com a fadiga.
+
+---
+
 !!! warning "Restrição de escopo"
     As recomendações de reabilitação desta obra (pós-reconstrução de LCA e LCP, patologia patelofemoral) são
     dirigidas a terapeutas e médicos. No uso deste acervo, elas servem para **adaptar treino e reconhecer
