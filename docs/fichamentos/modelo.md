@@ -114,6 +114,48 @@ foi achado — evita atribuir ao autor uma posição que ele não tomou.
 
 ---
 
+## Simplificando o estudo
+
+Seção fixa, sempre a última do fichamento. É o mesmo conteúdo dos Níveis 1 e 2 reescrito em
+**linguagem direta, para leitura rápida** — sem carimbos, sem tabelas, sem citação de página.
+Serve para reler antes de um atendimento e para explicar a obra a quem não vai ler o fichamento
+inteiro.
+
+Abrir com esta ressalva, para que a seção não seja confundida com a parte rastreável:
+
+> *Tudo abaixo é o mesmo conteúdo das seções anteriores, dito em linguagem direta, para leitura
+> rápida. Os dados, as citações e a localização por página estão nos Níveis 1 e 2 acima.*
+
+Regra de ouro: **nada de novo aparece aqui.** Se um argumento não está acima, ele não entra —
+simplificar é reescrever, não acrescentar. E o que já existe em outra seção (o parágrafo de
+explicação ao aluno, por exemplo) não se repete.
+
+### A ideia em uma frase
+
+O que a obra sustenta, numa frase que caiba na cabeça de quem tem trinta segundos.
+
+### O que o estudo mostrou
+
+Os achados centrais, um parágrafo curto cada, começando pela conclusão em negrito. Números
+arredondados e sem unidade técnica quando der.
+
+### O que muda no treino
+
+As decisões concretas, separadas por tipo de aluno quando fizer sentido (saudável, em
+reabilitação, iniciante).
+
+### Coisas que o estudo derruba
+
+Lista numerada de crenças comuns que o material contradiz. É a parte mais útil na conversa com
+aluno e com colega.
+
+### O que este estudo não responde
+
+Os limites, em linguagem simples: o que ficou de fora, onde o autor extrapola, e para quem os
+dados valem.
+
+---
+
 !!! warning "Restrição de escopo"
     Nutrição: orientação geral de hábitos e diálogo com nutricionista — não
     prescrição de dieta. Lesões e populações clínicas: adaptar treino e reconhecer
